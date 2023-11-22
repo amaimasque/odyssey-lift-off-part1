@@ -1,12 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {ApolloProvider} from '@apollo/client';
 import GlobalStyles from './styles';
 import Pages from './pages';
+import client from './utils/graphql/apollo';
 
 ReactDOM.render(
-  <React.StrictMode>
+  <ApolloProvider client={client}>
     <GlobalStyles />
     <Pages />
-  </React.StrictMode>,
+  </ApolloProvider>,
   document.getElementById('root')
 );
